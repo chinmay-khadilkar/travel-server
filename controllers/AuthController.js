@@ -50,18 +50,18 @@ const login = (req, res, next) => {
           if (result) {
             let token = jwt.sign({ name: user.name }, 'verySecretValue', { expiresIn: '1h' });
             res.json({
-              message: 'Logged In Successfully',
+              message: 'Success',
               token: token
             })
           } else {
             res.json({
-              message: 'Password doesnot match'
+              message: 'Wrong Password'
             })
           }
         })
       } else {
         res.json({
-          message: 'No User Found'
+          message: 'Not Found'
         })
       }
     })

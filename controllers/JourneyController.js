@@ -5,12 +5,13 @@ const index = (req, res, next) => {
   Journey.find()
     .then(resp => {
       res.json({
+        message: 'Success',
         resp
       })
     })
     .catch(error => {
       res.json({
-        message: 'Error occured'
+        message: 'Error'
       })
     })
 }
@@ -52,7 +53,7 @@ const store = (req, res, next) => {
     .then(response => {
       res.json({
         id: response._id,
-        message: 'Successfully Saved Journey!'
+        message: 'Success'
       });
     })
     .catch(error => {
