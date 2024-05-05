@@ -34,6 +34,12 @@ const journeySchema = new Schema({
   },
   journeyDoc: {
     type: String
+  },
+  lat: {
+    type: String
+  },
+  lon: {
+    type: String
   }
 
 }, { timestamps: true });

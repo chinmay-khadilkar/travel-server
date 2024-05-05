@@ -44,7 +44,9 @@ const store = (req, res, next) => {
     start: req.body.start,
     destination: req.body.destination,
     isItenenaryDocument: req.body.isItenenaryDocument,
-    days: req.body.itenenary
+    days: req.body.itenenary,
+    lat: req.body.lat,
+    lon: req.body.lon
   });
   if (req.file) {
     journey.journeyDoc = req.file.path;
@@ -78,7 +80,9 @@ const update = (req, res, next) => {
     start: req.body.start,
     destination: req.body.destination,
     isItenenaryDocument: req.body.isItenenaryDocument,
-    days: req.body.days
+    days: req.body.days,
+    lat: req.body.lat,
+    lon: req.body.lon
   }
 
   Journey.findByIdAndUpdate(journeyId, {
