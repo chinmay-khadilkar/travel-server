@@ -1,6 +1,18 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+const itenenarySchema = new Schema({
+  cityName: {
+    type: String
+  },
+  lat: {
+    type: String
+  },
+  long: {
+    type: String
+  }
+});
+
 const journeySchema = new Schema({
   title: {
     type: String
@@ -29,9 +41,7 @@ const journeySchema = new Schema({
   isItenenaryDocument: {
     type: Boolean
   },
-  days: {
-    type: Array
-  },
+  days: [itenenarySchema],
   journeyDoc: {
     type: String
   },
@@ -43,6 +53,8 @@ const journeySchema = new Schema({
   }
 
 }, { timestamps: true });
+
+
 
 const Journey = mongoose.model('Journey', journeySchema);
 

@@ -44,13 +44,14 @@ const store = (req, res, next) => {
     start: req.body.start,
     destination: req.body.destination,
     isItenenaryDocument: req.body.isItenenaryDocument,
-    days: req.body.itenenary,
+    days: req.body.days,
     lat: req.body.lat,
     lon: req.body.lon
   });
   if (req.file) {
     journey.journeyDoc = req.file.path;
   }
+  console.log(journey);
   journey.save()
     .then(response => {
       res.json({
