@@ -51,7 +51,7 @@ const store = (req, res, next) => {
   if (req.file) {
     journey.journeyDoc = req.file.path;
   }
-  console.log(journey);
+
   journey.save()
     .then(response => {
       res.json({
