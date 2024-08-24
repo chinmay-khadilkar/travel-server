@@ -26,9 +26,6 @@ const journeySchema = new Schema({
   endDate: {
     type: String
   },
-  duration: {
-    type: Number
-  },
   cost: {
     type: Number
   },
